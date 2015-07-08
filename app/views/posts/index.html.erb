@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Listing Posts</h1>
 
 <table>
@@ -19,7 +17,7 @@
         <td><%= post.title %></td>
         <td><%= post.cover %></td>
         <td><%= post.content %></td>
-        <td><%= post.user %></td>
+        <td><%= post.user.name %></td>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
