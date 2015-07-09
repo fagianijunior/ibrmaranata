@@ -16,12 +16,14 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :cover %><br>
-    <%= f.text_field :cover %>
+    <%= image_tag(@post.cover_url) if @post.cover? %>
+    <%= f.file_field :cover %>
+    <%= f.hidden_field :cover_cache %>
   </div>
   <div class="field">
     <%= f.label :content %><br>
-    <%= f.text_field :content %>
+    <%= tinymce %>
+    <%= f.text_field :content, class: "tinymce" %>
   </div>
   <div class="actions">
     <%= f.submit %>

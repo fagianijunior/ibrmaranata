@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  load_and_authorize_resource
   before_action :authenticate_user!
+  load_and_authorize_resource
 
   # GET /users
   # GET /users.json
@@ -30,7 +30,6 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
@@ -56,7 +55,6 @@ class UsersController < ApplicationController
                              @user.update_without_password(user_params)
                            end
 
-
     respond_to do |format|
       if successfully_updated
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
@@ -79,7 +77,6 @@ class UsersController < ApplicationController
   end
 
   private
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:email, :password, :password_confirmation, :name, :avatar, :role_id)
@@ -88,5 +85,4 @@ class UsersController < ApplicationController
     def needs_password?(user, params)
       params[:password].present?
     end
-
 end

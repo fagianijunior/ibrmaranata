@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'about/index'
+
   devise_for :users
   scope "/admin" do
     resources :users  
@@ -12,10 +14,12 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
 
-  authenticated :user do
-    root :to => 'posts#index', as: :authenticated_root
-  end
-  root :to => 'welcome#index'
+  root :to => 'posts#index'
+  
+  #authenticated :user do
+  #  root :to => 'posts#index', as: :authenticated_root
+  #end
+  #root :to => 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

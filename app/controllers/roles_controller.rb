@@ -1,6 +1,6 @@
 class RolesController < ApplicationController
-  load_and_authorize_resource
   before_action :authenticate_user!
+  load_and_authorize_resource
 
   # GET /roles
   # GET /roles.json
@@ -66,7 +66,6 @@ class RolesController < ApplicationController
   end
 
   private
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def role_params
       params.require(:role).permit(:name, :descriptin)
