@@ -8,6 +8,8 @@ gem 'devise'
 gem 'cancancan'
 gem 'tinymce-rails'
 gem 'carrierwave'
+gem 'social-share-button'
+gem 'disqus_rails'
 
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem "less-rails"

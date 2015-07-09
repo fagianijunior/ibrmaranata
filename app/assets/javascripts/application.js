@@ -14,5 +14,7 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require tinymce-jquery
+//= require disqus_rails
+//= require social-share-button
 //= require turbolinks
 //= require_tree .

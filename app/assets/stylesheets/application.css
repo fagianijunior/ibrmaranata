@@ -10,6 +10,26 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require social-share-button
  *= require_tree .
  *= require_self
  */
+hr {
+  border-color: #EEEEEE -moz-use-text-color #FFFFFF;
+  border-style: solid none;
+  border-width: 1px 0;
+  margin: 4px 0;
+}
+
+h2, .title {
+  margin: 0;
+}
+
+h2 .btn-group {
+  display: inline-block;
+}
+
+h2 {
+  overflow:hidden;
+  white-space: nowrap;
+}
