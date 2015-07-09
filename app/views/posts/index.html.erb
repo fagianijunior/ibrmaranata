@@ -19,8 +19,16 @@
         <td><%= post.content %></td>
         <td><%= post.user.name %></td>
         <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <% if can? :update, post %>
+            <%= link_to 'Edit', edit_post_path(post) %>
+          <% end %>
+        </td>
+        <td>
+          <% if can? :destroy, post %>
+            <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +36,6 @@
 
 <br>
 
-<%= link_to 'New Post', new_post_path %>
+<% if can? :create, Post %>
+  <%= link_to 'New Item', new_post_path %>
+<% end %>
