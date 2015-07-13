@@ -5,7 +5,15 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all.order(id: :desc)
+    
+    if params[:search]
+      @posts = Post.search(params[:search]).paginate(page: params[:page], per_page: 10).order(id: :DESC)
+    else
+      @posts = Post.all.paginate(page: params[:page], per_page: 10).order(id: :DESC)
+    end
+
+    #@posts = Post.paginate(page: params[:page], per_page: 10).order(id: :DESC)
+    #@posts = Post.all.order(id: :desc)
   end
 
   # GET /posts/1

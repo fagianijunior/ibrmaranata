@@ -1,0 +1,28 @@
+<div class="well sidebar-nav">
+  <%= image_tag "logo_150x110.png", class: "img-responsive center-block" %>
+</div>
+
+<div class="well sidebar-nav">
+  <%= form_tag(posts_path, method: "get", id: "search-form") do %>
+    <div class="input-group">
+      <%= text_field_tag :search, params[:search], placeholder: "Search Users", class: "form-control", placeholder: "Buscar por..." %>
+      <span class="input-group-btn">
+      <%= submit_tag "Ir", class: "btn btn-default" %>
+
+    </span>
+  </div><!-- /input-group -->
+    
+  <% end %>
+</div>
+
+<div class="well sidebar-nav">
+  <h4>HORÁRIOS DE CULTO</h4>
+  <b>Domingo manhã</b> 9:00 ás 11:00<br>
+  <b>Domingo noite</b> 18:30 ás 21:00<br>
+  <b>Quarta-feira</b> 19:00 ás 20:00<br>
+</div>
+
+<div class="well sidebar-nav">
+  <h4>LOCALIZAÇÃO</h4>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d31850.074910803432!2d-38.471841!3d-3.75361!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c746162b330f77%3A0xb4d8cb0838d670!2sAv.+das+Graviolas%2C+360+-+Cidade+2000%2C+Fortaleza+-+CE%2C+60190-600%2C+Brasil!5e0!3m2!1spt-BR!2sus!4v1436807883086" width="220" height="220" frameborder="0" style="border:0" allowfullscreen></iframe>
+</div>
