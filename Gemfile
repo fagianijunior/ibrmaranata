@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 ruby '2.2.1'
 
+#Webservice
+gem 'puma'
+
 #heroku 
 gem 'rails_12factor', group: :production
 
