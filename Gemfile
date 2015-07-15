@@ -4,6 +4,9 @@ ruby '2.2.1'
 #Webservice
 gem 'puma'
 
+#monitoramento
+gem 'newrelic_rpm', require: false
+
 #heroku 
 gem 'rails_12factor', group: :production
 
