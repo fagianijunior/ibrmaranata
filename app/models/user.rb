@@ -5,10 +5,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :posts, dependent: :destroy
   belongs_to :role
-
+ 
   validates_presence_of :name
   before_save :assign_role
-
+ 
   mount_uploader :avatar, AvatarUploader
   
   def assign_role

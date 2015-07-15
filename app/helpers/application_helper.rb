@@ -14,4 +14,18 @@ module ApplicationHelper
       link_to text, path
     end
   end
+  
+  def dropdown(text, control)
+    options = (controller.controller_name == control) ? { class: "active dropdown" } : {class: "dropdown"}
+    content_tag(:li, options) do
+      link_to(text, class: "dropdown-toggle",
+              data: {toggle: "dropdown"}, role: "button",
+              aria: {haspopup: "true", expended: "false"}) do 
+                "#{text} <span class='caret'></span>".html_safe
+              end +
+      content_tag(:ul, class: "dropdown-menu") do
+        yield
+      end
+    end
+  end
 end
