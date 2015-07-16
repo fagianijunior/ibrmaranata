@@ -16,6 +16,7 @@ gem 'tinymce-rails'
 gem 'carrierwave'
 gem 'social-share-button'
 gem 'disqus_rails'
+gem 'simple_form'
 gem 'will_paginate'
 
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'

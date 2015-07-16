@@ -1,35 +1,41 @@
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
-
-<p>
-  <strong>Avatar:</strong>
-  <%= @user.avatar %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong>Role:</strong>
-  <%= @user.role.name %>
-</p>
-
-<p>
-  <strong>Joined on:</strong>
-  <%= @joined_on %>
-</p>
-<p>
-  <strong>Last logged in on:</strong>
-  <%= @last_login %>
-</p>
-<p>
-  <strong>No. times logged in:</strong>
-  <%= @user.sign_in_count %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<div class="row">
+  <div class="col col-md-5">
+    <%= image_tag @user.avatar, label: false, class: "img-rounded" %>
+  </div>
+  <div class="col col-md-7">
+    <p>
+      <strong>Nome:</strong><br>
+      <%= @user.name %>
+    </p>
+    
+    <p>
+      <strong>Email:</strong><br>
+      <%= @user.email %>
+    </p>
+    
+    <p>
+      <strong>Função:</strong><br>
+      <%= @user.role.name %>
+    </p>
+    
+    <p>
+      <strong>Logou em:</strong><br>
+      <%= @joined_on %>
+    </p>
+    <p>
+      <strong>Último login:</strong><br>
+      <%= @last_login %>
+    </p>
+    
+    <p>
+      <strong>Quantas vezes logou:</strong><br>
+      <%= @user.sign_in_count %>
+    </p>
+  </div>
+</div>
+<div class="row">
+  <div class="col col-md-12 text-center">
+    <%= link_to 'Edit', edit_user_path(@user) %> |
+    <%= link_to 'Back', users_path %>
+  </div>
+</div>

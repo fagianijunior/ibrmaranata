@@ -1,4 +1,4 @@
-<%= form_for(@post) do |f| %>
+<%= simple_form_for(@post, html: { class: 'form-horizontal', multipart: true }) do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -11,21 +11,19 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= image_tag(@post.cover_url) if @post.cover? %>
-    <%= f.file_field :cover %>
-    <%= f.hidden_field :cover_cache %>
-  </div>
-  <div class="field">
-    <%= f.label :content %><br>
-    <%= tinymce %>
-    <%= f.text_area :content, class: "tinymce" %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.input :title %>
+
+  <%= image_tag(@post.cover_url) if @post.cover? %>
+  <%= f.input :cover %>
+  <%= f.hidden_field :cover_cache %>
+
+  <%= tinymce %>
+  <%= f.text_area :content, class: "tinymce" %>
+
+  <%= f.submit %>
+
 <% end %>
+
+
+
+
