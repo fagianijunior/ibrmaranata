@@ -46,8 +46,6 @@
         <%= link_to "IBRM", root_path, class: "navbar-brand" %>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <%= nav_bar do %>
-            <%= nav_link "QUEM SOMOS", about_index_path %>
-
             <%= nav_bar do %>
               <% if current_user && (current_user.admin? || current_user.writer?) %>
                 <%= dropdown "Postagens", "posts" do %>
@@ -58,6 +56,8 @@
                 <%= nav_link "Postagens", posts_path %>
               <% end %>
             <% end %>
+
+            <%= nav_link "Quem somos", about_index_path %>
 
             <%= nav_bar do %>
               <% if current_user && current_user.admin? %>
