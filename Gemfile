@@ -8,6 +8,7 @@ gem 'puma'
 gem 'newrelic_rpm', require: false
 
 #heroku 
+gem 'aws-sdk'
 gem 'rails_12factor', group: :production
 
 gem 'devise'
@@ -19,6 +20,7 @@ gem 'social-share-button'
 gem 'disqus_rails'
 gem 'simple_form'
 gem 'will_paginate'
+
 
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem "less-rails"
