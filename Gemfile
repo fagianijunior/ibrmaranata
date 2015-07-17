@@ -8,7 +8,6 @@ gem 'puma'
 gem 'newrelic_rpm', require: false
 
 #heroku 
-gem 'aws-sdk'
 gem 'rails_12factor', group: :production
 
 gem 'devise'

@@ -14,8 +14,8 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= image_tag user.avatar.small %></td>
-        <td><%= link_to  user.name, user %></td>
+        <td><%= image_tag user.avatar.small. class: "img-rounded" %></td>
+        <td><%= link_to user.name, user %></td>
         <td><%= user.email %></td>
         <td><%= user.role.name %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>

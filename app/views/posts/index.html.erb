@@ -4,7 +4,7 @@
 			<div class="row">
 				<div class="col-md-3">
 					<hr>
-				  <%= image_tag post.cover_url, class: "img-responsive img-rounded",style: "margin-top: 5px;" %>
+				  <%= image_tag post.cover_url, class: "img-responsive img-rounded", style: "margin-top: 5px;" %>
 				  Por <%= post.user.name %><br>
 				  <%= post.created_at.strftime("%d-%b-%Y") %><br>
 				  nº <%= post.id %>
