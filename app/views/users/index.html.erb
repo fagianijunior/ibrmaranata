@@ -14,7 +14,7 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= image_tag user.avatar, size: "50x50" %></td>
+        <td><%= image_tag user.avatar.small %></td>
         <td><%= link_to  user.name, user %></td>
         <td><%= user.email %></td>
         <td><%= user.role.name %></td>
