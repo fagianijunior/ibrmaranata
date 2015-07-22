@@ -13,9 +13,9 @@
   <div class="row">
     <div class="col col-md-6 text-center">
       <br>
-      <%= image_tag(@user.avatar.medium, class: "img-rounded img-responsive center-block") if @user.avatar? %>
-      <center><%= f.input :avatar, as: :file, label: false %></center>
+      <%= cl_image_tag @user.avatar, width:400, height:400, crop: :fill, gravity: :face, class: "img-rounded img-responsive center-block" if @user.avatar? %>
       <%= f.hidden_field :avatar_cache %>
+      <center><%= f.input :avatar, as: :file, label: false %></center>
     </div>
     <div class="col col-md-6">
       <%= f.input :name %>

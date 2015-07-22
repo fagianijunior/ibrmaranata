@@ -36,3 +36,6 @@ bower.json
 
 # Ignore pow environment settings
 .powenv
+
+# Ignore .env com variáveis de ambiente, utilizado pela gem dotenv-rails
+.env

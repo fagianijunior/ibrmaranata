@@ -4,17 +4,20 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
-  include CarrierWave::MiniMagick
+  # include CarrierWave::MiniMagick
+  include Cloudinary::CarrierWave
 
+  process :convert => 'png'
+  process :tags => 'user_avatar'
   # Choose what kind of storage to use for this uploader:
-  storage :file
+  # storage :file
   # storage :fog
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
-  def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{model.id}"
-  end
+  # def store_dir
+  #   "uploads/#{model.class.to_s.underscore}/#{model.id}"
+  # end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
@@ -32,14 +35,14 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
-  version :small do
-    process :resize_to_fill => [50, 50]
-  end
-  
-  version :medium do
-    process :resize_to_fill => [400, 400]
-  end
+  #version :medium do
+    #process :resize_to_fill => [400, 400, :north]
+  #end
 
+  #version :small do
+    #cloudinary_transformation :width => 50, :height => 50, :crop => :medium, :gravity => :face
+  #end
+  
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   def extension_white_list
@@ -49,7 +52,6 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
   def filename
-    "avatar.jpg" if original_filename
+    "avatar.png" if original_filename
   end
-
 end

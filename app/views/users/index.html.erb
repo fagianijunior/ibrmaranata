@@ -14,7 +14,7 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= image_tag user.avatar.small, class: "img-rounded" %></td>
+        <td><%= cl_image_tag user.avatar, width:50, height:50, crop: :fill, gravity: :face, class: "img-circle" %></td>
         <td><%= link_to user.name, user %></td>
         <td><%= user.email %></td>
         <td><%= user.role.name %></td>
