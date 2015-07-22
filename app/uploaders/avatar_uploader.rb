@@ -9,6 +9,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
   process :convert => 'png'
   process :tags => 'user_avatar'
+
   # Choose what kind of storage to use for this uploader:
   # storage :file
   # storage :fog
@@ -51,7 +52,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
-  def filename
-    "avatar.png" if original_filename
-  end
+  #def filename
+  #  "avatar.png" if original_filename
+  #end
 end

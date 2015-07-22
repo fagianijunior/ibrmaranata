@@ -5,16 +5,20 @@ class CoverUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
+  include Cloudinary::CarrierWave
+
+  process :convert => 'png'
+  process :tags => 'post_cover_avatar'
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
+  # storage :file
   # storage :fog
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
-  def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{model.id}/#{mounted_as}"
-  end
+  # def store_dir
+  #   "uploads/#{model.class.to_s.underscore}/#{model.id}/#{mounted_as}"
+  # end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
@@ -44,8 +48,7 @@ class CoverUploader < CarrierWave::Uploader::Base
 
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
-  def filename
-    "cover.jpg" if original_filename
-  end
-
+  #def filename
+  #  "cover.png" if original_filename
+  #end
 end

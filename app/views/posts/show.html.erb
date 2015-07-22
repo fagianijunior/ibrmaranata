@@ -1,11 +1,11 @@
 <% provide(:title, @post.title ) %>
 <%= disqus_init %>
 <h1 class="text-center"><strong><%= @post.title %></strong></h1>
-<%= image_tag @post.cover, class: "img-responsive img-rounded center-block" %>
+<%= cl_image_tag @post.cover, width:900, height:300, crop: :fit, class: "img-responsive img-rounded center-block" %>
 <hr>
 <div class="row">
   <div class="col col-md-6">
-    <%= image_tag @post.user.avatar.small, class: "img-circle" %> <%= @post.user.name %> em <%= @post.created_at.strftime("%d/%b/%Y às %H:%M") %>
+    <%= cl_image_tag @post.user.avatar, width:50, height:50, crop: :fill, gravity: :face, class: "img-circle" %> <%= @post.user.name %> em <%= @post.created_at.strftime("%d/%b/%Y às %H:%M") %>
   </div>
   <div class="col col-md-6 text-right">
     <%= social_share_button_tag(@post.title, popup: "true") %>

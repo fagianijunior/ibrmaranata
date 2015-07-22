@@ -13,7 +13,7 @@
 
   <%= f.input :title %>
 
-  <%= image_tag(@post.cover_url) if @post.cover? %>
+  <%= cl_image_tag@post.cover, width:900, height:300, crop: :fit, class: "img-responsive img-rounded center-block" if @post.cover? %>
   <%= f.input :cover %>
   <%= f.hidden_field :cover_cache %>
 
