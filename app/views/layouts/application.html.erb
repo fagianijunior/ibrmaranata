@@ -73,15 +73,15 @@
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.name %> <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <%= nav_link "Edit profile", edit_user_registration_path %>
+                  <%= nav_link "Editar perfil", edit_user_registration_path %>
                   <li role="separator" class="divider"></li>
-                  <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+                  <li><%= link_to "Sair", destroy_user_session_path, method: :delete %></li>
                 </ul>
               </li>
             <% else %>
               <%= nav_bar do %>
-                <%= nav_link "Sign in", new_user_session_path %>
-                <%= nav_link "Sign up", new_user_registration_path %>
+                <%= nav_link "Entrar", new_user_session_path %>
+                <%= nav_link "Criar conta", new_user_registration_path %>
               <% end %>
             <% end %>
           </ul>
