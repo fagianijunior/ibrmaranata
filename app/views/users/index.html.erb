@@ -14,7 +14,7 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= cl_image_tag user.avatar, width:50, height:50, crop: :fill, gravity: :face, class: "img-circle" %></td>
+        <td><%= cl_image_tag(user.avatar_url, width:50, height:50, crop: :fill, gravity: :face, class: "img-circle") unless user.avatar_url.nil? %></td>
         <td><%= link_to user.name, user %></td>
         <td><%= user.email %></td>
         <td><%= user.role.name %></td>
@@ -27,4 +27,4 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
+<%= link_to 'New User', new_user_path %>zzz

@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col col-md-6">
-    <%= cl_image_tag @user.avatar, width:400, height:400, crop: :fill, gravity: :face, class: "img-rounded center-block img-responsive"%>
+    <%= cl_image_tag(@user.avatar_url, width:400, height:400, crop: :fill, gravity: :face, class: "img-rounded center-block img-responsive") unless @user.avatar_url.nil? %>
   </div>
   <div class="col col-md-6">
     <p>
