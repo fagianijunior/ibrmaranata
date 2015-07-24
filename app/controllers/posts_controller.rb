@@ -1,6 +1,9 @@
 class PostsController < ApplicationController
+  analytical :modules=>[:google]
   before_action :authenticate_user!, except: [:index, :show]
   load_and_authorize_resource
+  
+  
 
   # GET /posts
   # GET /posts.json

@@ -6,6 +6,7 @@ gem 'puma'
 
 #monitoramento
 gem 'newrelic_rpm', require: false
+gem 'analytical'
 
 #heroku 
 gem 'rails_12factor', group: :production
