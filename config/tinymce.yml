@@ -8,9 +8,30 @@
 default:
   mode: textareas
 
-  toolbar: styleselect | undo redo | bold italic underline | alignleft aligncenter alignright alignjustify | forecolor hilitecolor| fontsize blockquote | table | image
+  toolbar1: styleselect | undo redo | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | forecolor backcolor | fontsize blockquote | table | image emoticons
   plugins:
+    - preview
+    - code
     - image
     - link
     - table
     - autoresize
+    - advlist
+    - autolink
+    - charmap
+    - print
+    - hr
+    - anchor
+    - pagebreak
+    - searchreplace
+    - wordcount
+    - visualblocks
+    - visualchars
+    - insertdatetime
+    - media
+    - nonbreaking
+    - save
+    - emoticons
+    - paste
+    - textcolor
+    - colorpicker
