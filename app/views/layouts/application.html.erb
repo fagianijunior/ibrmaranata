@@ -4,11 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <%= raw analytical.head_prepend_javascript %>
+    <%= analytics_init if Rails.env.production? %>
     <title><%= content_for?(:title) ? yield(:title) : " | Igreja Batista Regular Maranta" %></title>
     <%= csrf_meta_tags %>
-    <% analytical.identify '5', :email=>'josh@transfs.com' %>
-    <%= raw analytical.head_append_javascript %>
     <%= stylesheet_link_tag "application", :media => "all" %>
 
     <!-- For third-generation iPad with high-resolution Retina display: -->
@@ -39,7 +37,6 @@
     <![endif]-->
   </head>
   <body>
-  <%= raw analytical.body_prepend_javascript %>
     <div class="navbar navbar-default navbar-static-top">
       <div class="container">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
@@ -120,6 +117,5 @@
 
     </div> <!-- /container -->
 
-    <%= raw analytical.body_append_javascript %>
   </body>
 </html>

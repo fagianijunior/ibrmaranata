@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-  analytical :modules=>[:google]
   before_action :configure_permitted_parameters, if: :devise_controller?
   
   # Prevent CSRF attacks by raising an exception.
