@@ -38,7 +38,7 @@
 						<div class="col-md-12">
 						  <hr>
               <p class="text-justify">
-    			      <%=raw post.content.gsub(/\<img (.*?)>/, '').truncate(500) %><br />
+    			      <%= strip_tags(post.content).truncate(500) %><br />
     			      <%= link_to "(continuar lendo)", post_path(post) %>
     			    </p>
     			  </div>
