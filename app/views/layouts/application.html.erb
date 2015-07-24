@@ -57,7 +57,7 @@
               <% end %>
             <% end %>
 
-            <%= nav_link "Quem somos", about_index_path %>
+            <%= nav_link "Quem somos", post_path(Post.find 1) %>
 
             <%= nav_bar do %>
               <% if current_user && current_user.admin? %>
