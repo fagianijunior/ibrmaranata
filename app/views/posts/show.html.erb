@@ -5,7 +5,7 @@
 <hr>
 <div class="row">
   <div class="col col-md-6">
-    <%= cl_image_tag @post.user.avatar, width:50, height:50, crop: :fill, gravity: :face, class: "img-circle" %> <%= @post.user.name %> em <%= @post.created_at.strftime("%d/%b/%Y às %H:%M") %>
+    <%= cl_image_tag @post.user.avatar, width:50, height:50, crop: :thumb, gravity: :faces, class: "img-circle" %> <%= @post.user.name %> em <%= @post.created_at.strftime("%d/%b/%Y às %H:%M") %>
   </div>
   <div class="col col-md-6 text-right">
     <%= social_share_button_tag(@post.title, popup: "true") %>
