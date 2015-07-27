@@ -5,16 +5,15 @@
 <hr>
 <div class="row">
   <div class="col col-md-6">
-    <%= cl_image_tag @post.user.avatar, width:50, height:50, crop: :thumb, gravity: :faces, class: "img-circle" %> <%= @post.user.name %> em <%= @post.created_at.strftime("%d/%b/%Y às %H:%M") %>
+    <%= cl_image_tag @post.user.avatar, width:50, height:50, crop: :thumb, gravity: :faces, class: "img-circle" %> <%= @post.user.name %> em <%= @post.created_at.strftime("%d/%b/%Y") %>
   </div>
   <div class="col col-md-6 text-right">
-    <%= social_share_button_tag(@post.title, popup: "true") %>
+    <%= social_share_button_tag(@post.title, image: @post.cover, popup: "true") %>
   </div>
 </div>
 <hr>
 <h4 class="text-justify">
   <%=raw @post.content %>
 </h4>
+<%= link_to 'Voltar', posts_path %>
 <%- disqus_thread %>
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
