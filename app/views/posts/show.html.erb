@@ -8,7 +8,7 @@
     <%= cl_image_tag @post.user.avatar, width:50, height:50, crop: :thumb, gravity: :faces, class: "img-circle" %> <%= @post.user.name %> em <%= @post.created_at.strftime("%d/%b/%Y") %>
   </div>
   <div class="col col-md-6 text-right">
-    <%= social_share_button_tag(@post.title, image: @post.cover, popup: "true") %>
+    <%= social_share_button_tag(@post.title, popup: "true") %>
   </div>
 </div>
 <hr>

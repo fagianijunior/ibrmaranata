@@ -26,10 +26,10 @@ gem 'cloudinary'
 # gem 'refile', require: ['refile/rails', 'refile/image_processing']
 
 gem 'social-share-button'
+#gem 'shareable'
 gem 'disqus_rails'
 gem 'simple_form'
 gem 'will_paginate'
-
 
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem "less-rails"
