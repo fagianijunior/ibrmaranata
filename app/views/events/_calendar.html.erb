@@ -1,0 +1,17 @@
+<div id="calendar">
+	<h2 id="month">
+		<%= link_to "<", url_for(params.merge(date: (@date.beginning_of_month-1).strftime("%Y-%m-%d"))) %>
+		<%=h @date.strftime("%B %Y") %>
+		<%= link_to ">", url_for(params.merge(date: (@date.end_of_month+1).strftime("%Y-%m-%d"))) %>
+	</h2>
+	<%= calendar_for(@calendar_events, year: @date.year, month: @date.month) do |t| %>
+	  <%= t.head('D','S', 'T', 'Q', 'Q', 'S', 'S') %>
+	  <%= t.day do |day, events| %>
+	    <% if events.length == 0 %>
+	      <%= day.day %>
+	    <% else %>
+	      <%= link_to(day.day, events_path(date: (day).strftime("%Y-%m-%d"))) %>
+	    <% end %>
+	  <% end %>
+	<% end %>
+</div>

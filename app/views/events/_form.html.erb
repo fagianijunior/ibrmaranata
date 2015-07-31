@@ -1,0 +1,13 @@
+<%= simple_form_for(@event) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :title, label: "Título", placeholder: "Título do evento" %>
+    <%= f.input :content, label: "Informações", placeholder: "Informações sobre o evento" %>
+    <%= f.input :date, label: "Data" %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, value: "Criar evento" %>
+  </div>
+<% end %>

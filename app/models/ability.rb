@@ -8,8 +8,11 @@ class Ability
     
     if user.id.nil?
       can :read, Post
+      can :read, Event
+
     elsif user.admin?
       can :manage, :all
+
     elsif user.writer?
       can :read, Post
       can :create, Post
@@ -19,8 +22,11 @@ class Ability
       can :destroy, Post do |post|
         post.try(:user) == user
       end
+      can :read, Event
+
     elsif user.regular?
       can :read, Post
+      can :read, Event
     end
     #
     # The first argument to `can` is the action you are giving the user

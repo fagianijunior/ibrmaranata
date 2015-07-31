@@ -30,6 +30,8 @@ gem 'social-share-button'
 gem 'disqus_rails'
 gem 'simple_form'
 gem 'will_paginate'
+gem 'table_builder'
+gem 'watu_table_builder', require: 'table_builder'
 
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem "less-rails"

@@ -1,0 +1,16 @@
+<p>
+  <strong>Título:</strong>
+  <%= @event.title %>
+</p>
+
+<p>
+  <strong>Data do evento:</strong>
+  <%= @event.date %>
+</p>
+
+<p>
+  <strong>Informações:</strong><br>
+  <%= @event.content.gsub(/\n/, '<br/>').html_safe %>
+</p>
+
+<%= link_to 'Editar', edit_event_path(@event), class: "btn btn-default" if can? :update, @event %>

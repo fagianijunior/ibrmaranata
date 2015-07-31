@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   
+  before_action :set_calendar
+  
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
@@ -11,6 +13,18 @@ class ApplicationController < ActionController::Base
   end
   
   protected
+  
+  def set_calendar
+    if params[:date]
+      @events = Event.where(date: params[:date])
+      @calendar_events = Event.all
+    else
+      @events = @calendar_events = Event.all
+    end
+    
+    @date = params[:date] ? Date.parse(params[:date]) : Date.today
+  end
+  
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:name, :email, :password,
       :password_confirmation, :remember_me, :avatar, :avatar_cache) }

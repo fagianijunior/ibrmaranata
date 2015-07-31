@@ -189,6 +189,7 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
+    table_builder (0.2.3)
     therubyracer (0.12.2)
       libv8 (~> 3.16.14.0)
       ref
@@ -209,6 +210,7 @@ GEM
     unf_ext (0.0.7.1)
     warden (1.2.3)
       rack (>= 1.0)
+    watu_table_builder (0.3.0)
     will_paginate (3.0.7)
 
 PLATFORMS
@@ -238,11 +240,13 @@ DEPENDENCIES
   simple_form
   social-share-button
   spring
+  table_builder
   therubyracer
   tinymce-rails
   turbolinks
   twitter-bootstrap-rails!
   uglifier (>= 1.3.0)
+  watu_table_builder
   will_paginate
 
 BUNDLED WITH

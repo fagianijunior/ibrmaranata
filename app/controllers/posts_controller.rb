@@ -1,8 +1,7 @@
 class PostsController < ApplicationController
+  
   before_action :authenticate_user!, except: [:index, :show]
   load_and_authorize_resource
-  
-  
 
   # GET /posts
   # GET /posts.json
@@ -13,9 +12,6 @@ class PostsController < ApplicationController
     else
       @posts = Post.all.paginate(page: params[:page], per_page: 10).order(id: :DESC)
     end
-
-    #@posts = Post.paginate(page: params[:page], per_page: 10).order(id: :DESC)
-    #@posts = Post.all.order(id: :desc)
   end
 
   # GET /posts/1
@@ -72,7 +68,6 @@ class PostsController < ApplicationController
   end
 
   private
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
       params.require(:post).permit(:title, :cover, :content, :user_id)
