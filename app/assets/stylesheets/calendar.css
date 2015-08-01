@@ -68,7 +68,10 @@
   color: #ffa0a0;
 }
 
+.with-event {
+  color: red;
+}
+
 #calendar a:visited {
-  background-color: green;
   color: red;
 }

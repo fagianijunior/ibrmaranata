@@ -10,7 +10,7 @@
 	    <% if events.length == 0 %>
 	      <%= day.day %>
 	    <% else %>
-	      <%= link_to(day.day, events_path(date: (day).strftime("%Y-%m-%d"))) %>
+	      <%= link_to(day.day, events_path(date: (day).strftime("%Y-%m-%d")), class: "with-event") %>
 	    <% end %>
 	  <% end %>
 	<% end %>
