@@ -1,4 +1,8 @@
 <% provide(:title, @post.title ) %>
+<% provide(:meta_url, post_url(@post)) %>
+<% provide(:meta_description, sanitize(strip_tags(@post.content).truncate(150)) ) %>
+<% provide(:meta_image, @post.cover) %>
+
 <%= disqus_init %>
 <h1 class="text-center"><strong><%= @post.title %></strong></h1>
 <%= cl_image_tag @post.cover, width:900, height:300, crop: :fit, class: "img-responsive img-rounded center-block" %>
