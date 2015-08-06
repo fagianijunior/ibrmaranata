@@ -1,23 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-    <meta charset="utf-8">
-    <meta property="og:locale" content="pt_BR" />
-    <meta property="og:url" content="<%= content_for?(:meta_url) ? yield(:meta_url) : 'http://www.ibrmaranata.com.br/' %>" />
-    <meta property="og:title" content="<%= content_for?(:title) ? yield(:title) : 'Igreja Batista Maranata' %>" />
-    <meta property="og:site_name" content="IBRMaranata" />
-    <meta property="og:description" content="<%= content_for?(:meta_description) ? yield(:meta_description) : 'Igreja Batista Regular Maranata, localizada na Cidade 2000 - Fortaleza/CE, fundada em 1983 pelo missionário Jammes Benefield.' %>" />
-    <meta property="og:image" content="<%= content_for?(:meta_image) ? yield(:meta_image) : '' %>" />
-    <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:width" content="900" />
-    <meta property="og:image:height" content="300" />
-    
+    <%= metamagic charset: "utf-8",
+                  title: "Igreja Batista Regular Maranata",
+                  keywords: %w(Igreja Batista Regular Maranata Fortaleza Cidade 2000 dois mil papicu Carlos Fagiani Pastor CE Ceara Graviolas Jammes Benefield),
+                  og: { locale: "pt_BR",
+                        url: "http://www.ibrmaranata.com.br/",
+                        title: "Igreja Batista Regular Maranata",
+                        site_name: "IBRMaranata",
+                        description: "Igreja Batista Regular Maranata, localizada na Cidade 2000 - Fortaleza/CE, fundada em 1983 pelo missionário Jammes Benefield."
+                      } %>
+
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="keywords" content="Igreja, Batista, Regular, Maranata, Fortaleza, Cidade, 2000, dois mil, papicu, Carlos, Fagiani, Pastor, CE, Ceará, Graviolas, Jammes, Benefield" />
     <%= analytics_init if Rails.env.production? %>
-    <title><%= content_for?(:title) ? yield(:title) : "Igreja Batista Regular Maranta" %></title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag "application", :media => "all" %>
 

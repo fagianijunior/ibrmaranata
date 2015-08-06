@@ -4,6 +4,9 @@ ruby '2.2.1'
 #Webservice
 gem 'puma'
 
+#meta tags
+gem 'metamagic'
+
 #monitoramento
 gem 'newrelic_rpm', require: false
 gem 'google-analytics-rails'

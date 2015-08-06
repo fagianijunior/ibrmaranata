@@ -1,7 +1,12 @@
-<% provide(:title, @post.title ) %>
-<% provide(:meta_url, post_url(@post)) %>
-<% provide(:meta_description, sanitize(strip_tags(@post.content).truncate(150)) ) %>
-<% provide(:meta_image, @post.cover) %>
+<%
+  meta title: @post.title
+  meta og: {
+    description: sanitize(strip_tags(@post.content).truncate(150)),
+    url: post_url(@post),
+    site_name: "IBRMaranata",
+    image: @post.cover
+  }
+%>
 
 <%= disqus_init %>
 <h1 class="text-center"><strong><%= @post.title %></strong></h1>
