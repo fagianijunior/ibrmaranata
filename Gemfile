@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.2.1'
+ruby '2.3.0'
 
 #Webservice
 gem 'puma'
@@ -36,7 +36,7 @@ gem 'will_paginate'
 gem 'table_builder'
 gem 'watu_table_builder', require: 'table_builder'
 
-gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+gem 'twitter-bootstrap-rails'
 gem "less-rails"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

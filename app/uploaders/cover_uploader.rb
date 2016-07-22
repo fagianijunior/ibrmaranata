@@ -7,7 +7,7 @@ class CoverUploader < CarrierWave::Uploader::Base
   process :tags => 'post_cover'
   
   def public_id
-    "uploads/#{model.class.to_s.underscore}/#{model.id}/#{mounted_as}"
+    "ibrmaranata/uploads/#{model.class.to_s.underscore}/#{model.id}/#{mounted_as}"
   end
   
 #  def filename
